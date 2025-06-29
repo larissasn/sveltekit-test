@@ -23,13 +23,25 @@
 
 <svelte:head>
 	<title>Prever idade - Descubra a idade por nome</title>
-	<meta name="description" content="Aplicação que prediz idade baseada no nome usando IA" />
+	<meta
+		name="description"
+		content="Aplicação que prediz idade baseada serviço Agify.io de previsão"
+	/>
 </svelte:head>
 
 <main>
 	<div class="container">
 		<header>
-			<h1>🔮Prever idade</h1>
+			<h1>
+				<img
+					src="/icon-title.png"
+					alt="icone-titulo"
+					width="60"
+					height="60"
+					style="vertical-align: middle; margin-right: 8px;"
+				/>
+				Prever idade
+			</h1>
 			<p class="subtitle">Descubra a idade estimada de qualquer nome</p>
 		</header>
 
@@ -52,7 +64,16 @@
 			{#if data.result}
 				<div class="result-card">
 					<div class="result-header">
-						<h2>📊 Resultado para "{data.result.name}"</h2>
+						<h2>
+							<img
+								src="/grafico.png"
+								alt="icone-grafico"
+								width="38"
+								height="38"
+								style="vertical-align: middle; margin-right: 8px;"
+							/>
+							Resultado para "{data.result.name}"
+						</h2>
 					</div>
 					<div class="result-content">
 						<div class="age-display">
@@ -73,7 +94,13 @@
 				</div>
 			{:else}
 				<div class="empty-state">
-					<div class="empty-icon">🎯</div>
+					<img
+						src="/alvo.png"
+						alt="icone-alvo"
+						width="50"
+						height="50"
+						style="vertical-align: middle; margin-right: 8px;"
+					/>
 					<h3>Comece digitando um nome</h3>
 					<p>Nossos serviços irá prever a idade mais provável baseada em milhões de dados</p>
 				</div>
@@ -92,7 +119,7 @@
 		padding: 0;
 		font-family:
 			-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, rgb(12, 17, 21) 0%, #0b1316 100%);
 		min-height: 100vh;
 		overflow-x: hidden;
 	}
@@ -108,12 +135,12 @@
 	.container {
 		width: 100%;
 		max-width: 600px;
-		background: rgba(255, 255, 255, 0.95);
+		background: rgba(11, 19, 22, 0.95);
 		backdrop-filter: blur(20px);
 		border-radius: 24px;
 		padding: 40px;
-		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-		border: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+		border: 1px solid rgba(40, 110, 45, 0.3);
 	}
 
 	header {
@@ -124,15 +151,14 @@
 	h1 {
 		font-size: 2.5rem;
 		font-weight: 700;
-		background: linear-gradient(135deg, #667eea, #764ba2);
+		background: linear-gradient(135deg, #40aa34, #286e2d);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		margin: 0 0 10px 0;
 	}
-
 	.subtitle {
-		color: #666;
+		color: #9ca3af;
 		font-size: 1.1rem;
 		margin: 0;
 		opacity: 0.8;
@@ -152,17 +178,22 @@
 		font-size: 1.2rem;
 		border: 2px solid transparent;
 		border-radius: 16px;
-		background: #f8f9fa;
+		background: rgba(12, 17, 21, 0.8);
+		color: #e5e7eb;
 		outline: none;
 		transition: all 0.3s ease;
 		box-sizing: border-box;
 	}
 
+	.name-input::placeholder {
+		color: #6b7280;
+	}
+
 	.name-input:focus {
-		border-color: #667eea;
-		background: #fff;
+		border-color: #40aa34;
+		background: rgba(12, 17, 21, 0.9);
 		transform: translateY(-2px);
-		box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+		box-shadow: 0 10px 30px rgba(64, 170, 52, 0.3);
 	}
 
 	.input-glow {
@@ -172,7 +203,7 @@
 		right: 0;
 		bottom: 0;
 		border-radius: 16px;
-		background: linear-gradient(135deg, #667eea, #764ba2);
+		background: linear-gradient(135deg, #40aa34, #286e2d);
 		opacity: 0;
 		transition: opacity 0.3s ease;
 		pointer-events: none;
@@ -191,17 +222,17 @@
 	}
 
 	.result-card {
-		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		background: linear-gradient(135deg, rgba(12, 17, 21, 0.9) 0%, rgba(11, 19, 22, 0.8) 100%);
 		border-radius: 20px;
 		padding: 30px;
 		text-align: center;
-		border: 1px solid #e9ecef;
+		border: 1px solid rgba(40, 110, 45, 0.3);
 		width: 100%;
 		animation: slideUp 0.5s ease;
 	}
 
 	.result-header h2 {
-		color: #333;
+		color: #e5e7eb;
 		margin: 0 0 20px 0;
 		font-size: 1.3rem;
 		font-weight: 600;
@@ -218,7 +249,7 @@
 	.age-number {
 		font-size: 4rem;
 		font-weight: 800;
-		background: linear-gradient(135deg, #667eea, #764ba2);
+		background: linear-gradient(135deg, #40aa34, #286e2d);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -226,25 +257,25 @@
 
 	.age-label {
 		font-size: 1.5rem;
-		color: #666;
+		color: #9ca3af;
 		font-weight: 500;
 	}
 
 	.count-info {
-		color: #666;
+		color: #9ca3af;
 		font-size: 0.95rem;
 	}
 
 	.loading {
 		text-align: center;
-		color: #666;
+		color: #9ca3af;
 	}
 
 	.spinner {
 		width: 40px;
 		height: 40px;
-		border: 3px solid #f3f3f3;
-		border-top: 3px solid #667eea;
+		border: 3px solid rgba(40, 110, 45, 0.2);
+		border-top: 3px solid #40aa34;
 		border-radius: 50%;
 		animation: spin 1s linear infinite;
 		margin: 0 auto 15px;
@@ -252,17 +283,12 @@
 
 	.empty-state {
 		text-align: center;
-		color: #666;
-	}
-
-	.empty-icon {
-		font-size: 3rem;
-		margin-bottom: 15px;
+		color: #9ca3af;
 	}
 
 	.empty-state h3 {
 		margin: 0 0 10px 0;
-		color: #333;
+		color: #e5e7eb;
 	}
 
 	.empty-state p {
@@ -274,23 +300,24 @@
 		text-align: center;
 		margin-top: 40px;
 		padding-top: 20px;
-		border-top: 1px solid #e9ecef;
+		border-top: 1px solid rgba(40, 110, 45, 0.3);
 	}
 
 	footer p {
-		color: #666;
+		color: #9ca3af;
 		font-size: 0.9rem;
 		margin: 0;
 	}
 
 	footer a {
-		color: #667eea;
+		color: #40aa34;
 		text-decoration: none;
 		font-weight: 500;
 	}
 
 	footer a:hover {
 		text-decoration: underline;
+		color: #286e2d;
 	}
 
 	@keyframes spin {

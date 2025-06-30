@@ -107,9 +107,9 @@
 			{/if}
 		</div>
 
-		<footer>
-			<p>Powered by <a href="https://agify.io" target="_blank" rel="noopener">Agify.io</a></p>
-		</footer>
+		<!-- <footer>
+			<p>Apenas uma previsão<a href="https://agify.io" target="_blank" rel="noopener">...</a></p>
+		</footer> -->
 	</div>
 </main>
 
